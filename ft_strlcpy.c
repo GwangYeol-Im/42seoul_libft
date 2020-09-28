@@ -6,13 +6,13 @@
 /*   By: imgwang-yeol <imgwang-yeol@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 21:31:32 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/28 22:03:44 by imgwang-yeo      ###   ########.fr       */
+/*   Updated: 2020/09/28 22:14:13 by imgwang-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		strlcpy(char *dst, const char *src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	int		idx;
 	int		len;
