@@ -16,6 +16,7 @@ SRCS := ft_isalnum.c \
 		ft_toupper.c \
 		ft_strlen.c \
 		ft_strlcpy.c \
+		ft_strlcat.c \
 
 OBJS := ${SRCS:c=o}
 
