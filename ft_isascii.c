@@ -6,11 +6,11 @@
 /*   By: imgwang-yeol <imgwang-yeol@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 13:55:34 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/28 13:56:15 by imgwang-yeo      ###   ########.fr       */
+/*   Updated: 2020/09/28 23:29:19 by imgwang-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isascii(int c)
 {
-	return (c >= 0 && c <= 256);
+	return (c >= 0 && c <= 127);
 }

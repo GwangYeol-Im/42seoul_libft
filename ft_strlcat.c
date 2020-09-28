@@ -6,7 +6,7 @@
 /*   By: imgwang-yeol <imgwang-yeol@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:15:12 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/28 23:19:07 by imgwang-yeo      ###   ########.fr       */
+/*   Updated: 2020/09/28 23:34:10 by imgwang-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int		idx;
-	int		len;
-	int		dst_len;
-	int		src_len;
+	size_t	idx;
+	size_t	dst_len;
+	size_t	src_len;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
