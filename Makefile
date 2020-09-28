@@ -7,6 +7,7 @@ TARGET := libft.a
 
 INC := libft.h
 
+SRCS_DIR = ./
 SRCS := ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -18,7 +19,7 @@ SRCS := ft_isalnum.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
 
-OBJS := ${SRCS:c=o}
+OBJS := ${addprefix ${SRCS_DIR}, ${SRCS:c=o}}
 
 all : ${TARGET}
 
@@ -28,7 +29,7 @@ clean :
 fclean :
 		rm -f ${TARGET}
 
-re : fclean all
+re : clean all
 
 ${TARGET} : ${INC} ${OBJS}
 		${AR} ${ARFLAGS} $@ $^
