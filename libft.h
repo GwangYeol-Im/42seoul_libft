@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imgwang-yeol <imgwang-yeol@student.42.f    +#+  +:+       +#+        */
+/*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 13:43:02 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/29 13:15:18 by imgwang-yeo      ###   ########.fr       */
+/*   Updated: 2020/09/29 13:51:48 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdio.h>
-#include <stddef.h>
+# include <stdio.h>
+# include <stddef.h>
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
