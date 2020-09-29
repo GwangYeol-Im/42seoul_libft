@@ -3,7 +3,7 @@ ARFLAGS := rcs
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 
-TARGET := libft.a
+NAME := libft.a
 
 INC := libft.h
 
@@ -33,21 +33,21 @@ SRCS := ft_isalnum.c \
 		ft_strdup.c \
 		ft_calloc.c \
 
-OBJS := ${addprefix ${SRCS_DIR}, ${SRCS:c=o}}
+OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
 
-all : ${TARGET}
+all : $(NAME)
 
 clean :
-		rm -f ${OBJS}
+		rm -f $(OBJS)
 
-fclean :
-		rm -f ${TARGET}
+fclean : clean
+		rm -f $(NAME)
 
-re : clean all
+re : fclean all
 
-${TARGET} : ${INC} ${OBJS}
-		${AR} ${ARFLAGS} $@ $^
+$(NAME) : $(INC) $(OBJS)
+		$(AR) $(ARFLAGS) $@ $^
 
 %.o : %.c Makefile
-		${CC} ${CFLAGS} -c $<
+		$(CC) $(CFLAGS) -c $<
 

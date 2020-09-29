@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:22:44 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/29 14:54:34 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/29 21:40:31 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*new_src;
 	unsigned char	temp[len];
-	int				idx;
+	size_t			idx;
 
 	idx = 0;
 	new_src = (unsigned char *)src;
