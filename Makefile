@@ -21,6 +21,7 @@ SRCS := ft_isalnum.c \
 		ft_memset.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
+		ft_memcmp.c \
 
 OBJS := ${addprefix ${SRCS_DIR}, ${SRCS:c=o}}
 
