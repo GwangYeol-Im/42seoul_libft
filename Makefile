@@ -18,6 +18,7 @@ SRCS := ft_isalnum.c \
 		ft_strlen.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
+		ft_memset.c \
 
 OBJS := ${addprefix ${SRCS_DIR}, ${SRCS:c=o}}
 
