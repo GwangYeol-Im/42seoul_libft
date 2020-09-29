@@ -6,7 +6,7 @@
 /*   By: imgwang-yeol <imgwang-yeol@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 13:43:02 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/29 13:00:34 by imgwang-yeo      ###   ########.fr       */
+/*   Updated: 2020/09/29 13:15:18 by imgwang-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 
+void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *ptr, int value, size_t num);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
