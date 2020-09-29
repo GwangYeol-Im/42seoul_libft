@@ -25,6 +25,7 @@ SRCS := ft_isalnum.c \
 		ft_memchr.c \
 		ft_memmove.c \
 		ft_bzero.c \
+		ft_strchr.c \
 
 OBJS := ${addprefix ${SRCS_DIR}, ${SRCS:c=o}}
 
