@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 13:43:02 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/29 18:24:56 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/29 18:49:41 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 #endif
