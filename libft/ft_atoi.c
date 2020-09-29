@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 19:54:34 by gim               #+#    #+#             */
-/*   Updated: 2020/09/29 20:15:02 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/29 21:48:39 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			get_int(char *str, int len)
 
 	num = 0;
 	idx = 0;
-	while(idx < len)
+	while (idx < len)
 		num = num * 10 + (str[idx++] - '0');
 	return (num);
 }
@@ -30,7 +30,7 @@ int			ft_isspace(char c)
 		return (1);
 	if (c == '\r' || c == '\f' || c == ' ')
 		return (1);
-	return(0);
+	return (0);
 }
 
 int			ft_atoi(const char *str)
