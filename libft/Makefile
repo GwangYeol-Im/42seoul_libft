@@ -33,8 +33,7 @@ SRCS := ft_isalnum.c \
 		ft_atoi.c \
 		ft_strdup.c \
 		ft_calloc.c \
-
-SRCS2 := ft_substr.c \
+		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
@@ -45,20 +44,26 @@ SRCS2 := ft_substr.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+SRCS_B := ft_lstnew.c \
+		ft_lstadd_front.c \
+
 OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
-OBJS2 := $(addprefix $(SRCS2_DIR), $(SRCS2:c=o))
+OBJS_B := $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
 
 all : $(NAME)
 
 clean :
-		rm -f $(OBJS) $(OBJS2)
+		rm -f $(OBJS) $(OBJS_B)
 
 fclean : clean
 		rm -f $(NAME)
 
 re : fclean all
 
-$(NAME) : $(INC) $(OBJS) $(OBJS2)
+bonus : $(OBJS_B)
+		$(AR) $(NAME) $^
+
+$(NAME) : $(INC) $(OBJS)
 		$(AR) $(ARFLAGS) $@ $^
 
 %.o : %.c Makefile
