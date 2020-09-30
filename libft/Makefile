@@ -63,6 +63,9 @@ OBJS_B := $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
 $(NAME) : $(INC) $(OBJS)
 		$(AR) $(ARFLAGS) $@ $^
 
+bonus : $(OBJS_B)
+		$(AR) $(ARFLAGS) $(NAME) $^
+
 all : $(NAME)
 
 clean :
@@ -73,7 +76,6 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJS_B)
-		$(AR) $(NAME) $^
+
 
 
