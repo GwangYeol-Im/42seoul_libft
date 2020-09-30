@@ -8,6 +8,7 @@ NAME := libft.a
 INC := libft.h
 
 SRCS_DIR = ./
+SRCS2_DIR = ./
 SRCS := ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -33,19 +34,24 @@ SRCS := ft_isalnum.c \
 		ft_strdup.c \
 		ft_calloc.c \
 
+SRCS2 := ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+
 OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
+OBJS2 := $(addprefix $(SRCS2_DIR), $(SRCS2:c=o))
 
 all : $(NAME)
 
 clean :
-		rm -f $(OBJS)
+		rm -f $(OBJS) $(OBJS2)
 
 fclean : clean
 		rm -f $(NAME)
 
 re : fclean all
 
-$(NAME) : $(INC) $(OBJS)
+$(NAME) : $(INC) $(OBJS) $(OBJS2)
 		$(AR) $(ARFLAGS) $@ $^
 
 %.o : %.c Makefile
