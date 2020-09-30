@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 13:43:51 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/30 14:14:25 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ char		**ft_split(char const *s, char c)
 	char	*new_s;
 
 	len = get_len(s, c);
-	split = malloc(sizeof(char *) * (len + 1));
-	if (!split)
+	if (!(split = malloc(sizeof(char *) * (len + 1))))
 		return (0);
 	split[len] = 0;
 	new_s = (char *)s;
