@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 19:54:34 by gim               #+#    #+#             */
-/*   Updated: 2020/09/29 21:48:39 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/30 13:48:16 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,12 @@ int			ft_atoi(const char *str)
 	int		idx;
 	char	*new_str;
 
-	minus = 1;
 	new_str = (char *)str;
 	while (ft_isspace(*new_str))
 		new_str++;
 	if (*new_str == '+' || *new_str == '-')
 	{
-		minus = *new_str == '-' ? minus * -1 : minus;
+		minus = *new_str == '-' ? -1 : 1;
 		new_str++;
 	}
 	if (!ft_isdigit(*new_str))
