@@ -38,6 +38,7 @@ SRCS2 := ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
+		ft_itoa.c
 
 OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
 OBJS2 := $(addprefix $(SRCS2_DIR), $(SRCS2:c=o))
