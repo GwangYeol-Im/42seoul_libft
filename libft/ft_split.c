@@ -6,28 +6,26 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 14:14:25 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/30 14:24:25 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			get_len(char const *s, char c)
+int			get_len(char *s, char c)
 {
 	int		len;
-	char	*new_s;
 
 	len = 0;
-	new_s = (char *)s;
-	while (*new_s)
+	while (*s)
 	{
-		while (*new_s == c && *new_s)
-			new_s++;
-		if (!*new_s)
+		while (*s == c && *s)
+			s++;
+		if (!*s)
 			return (len);
 		len++;
-		while (*new_s != c && *new_s)
-			new_s++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (len);
 }
@@ -40,7 +38,7 @@ char		**ft_split(char const *s, char c)
 	char	**split;
 	char	*new_s;
 
-	len = get_len(s, c);
+	len = get_len(new_s, c);
 	if (!(split = malloc(sizeof(char *) * (len + 1))))
 		return (0);
 	split[len] = 0;
