@@ -57,6 +57,12 @@ SRCS_B := ft_lstnew.c \
 OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
 OBJS_B := $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
 
+%.o : %.c Makefile
+		$(CC) $(CFLAGS) -c $<
+
+$(NAME) : $(INC) $(OBJS)
+		$(AR) $(ARFLAGS) $@ $^
+
 all : $(NAME)
 
 clean :
@@ -70,9 +76,4 @@ re : fclean all
 bonus : $(OBJS_B)
 		$(AR) $(NAME) $^
 
-$(NAME) : $(INC) $(OBJS)
-		$(AR) $(ARFLAGS) $@ $^
-
-%.o : %.c Makefile
-		$(CC) $(CFLAGS) -c $<
 

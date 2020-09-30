@@ -6,13 +6,13 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 14:24:25 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/30 20:41:52 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			get_len(char *s, char c)
+int			count_units(char *s, char c)
 {
 	int		len;
 
@@ -38,11 +38,11 @@ char		**ft_split(char const *s, char c)
 	char	**split;
 	char	*new_s;
 
-	len = get_len(new_s, c);
+	new_s = (char *)s;
+	len = count_units(new_s, c);
 	if (!(split = malloc(sizeof(char *) * (len + 1))))
 		return (0);
 	split[len] = 0;
-	new_s = (char *)s;
 	split_i = 0;
 	while (*new_s)
 	{
