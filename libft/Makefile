@@ -49,6 +49,7 @@ SRCS_B := ft_lstnew.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
+		ft_lstdelone.c \
 
 OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
 OBJS_B := $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
