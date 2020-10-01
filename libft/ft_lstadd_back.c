@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 18:20:21 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 18:21:59 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/01 12:23:28 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void		ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*temp;
-
-	temp = *lst;
-	while (temp->next)
+	t_list	*last;
+	
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
-		temp = temp->next;
+		*lst = new;
+		return ;
 	}
-	temp->next = new;
+	last = ft_lstlast(*lst);
+	new->next = last->next;
+	last->next = new;
 }
