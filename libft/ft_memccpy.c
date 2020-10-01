@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 11:16:31 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/09/29 13:54:21 by gim              ###   ########.fr       */
+/*   Updated: 2020/09/30 23:57:35 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		if (*new_src == new_c)
 		{
 			*new_dst = *new_src;
-			return (dst);
+			return (new_dst + 1);
 		}
 		*new_dst++ = *new_src++;
 	}
-	return (dst);
+	return (0);
 }

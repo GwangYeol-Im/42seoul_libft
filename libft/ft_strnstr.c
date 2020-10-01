@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:59:30 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 16:22:36 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/01 00:32:29 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strnstr(const char *big, const char *find, size_t len)
 	idx = 0;
 	if (!find[idx])
 		return (new_big);
-	while (len--)
+	while (len-- && *new_big)
 	{
 		if (find[idx] == '\0')
 			return (new_big - idx);

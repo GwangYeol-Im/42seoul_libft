@@ -1,15 +1,15 @@
-AR := ar
-ARFLAGS := rcs
-CC := gcc
-CFLAGS := -Wall -Wextra -Werror
+AR = ar
+ARFLAGS = rcs
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-NAME := libft.a
+NAME = libft.a
 
-INC := libft.h
+INC = libft.h
 
 SRCS_DIR = ./
 SRCS2_DIR = ./
-SRCS := ft_isalnum.c \
+SRCS = ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
@@ -44,7 +44,7 @@ SRCS := ft_isalnum.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-SRCS_B := ft_lstnew.c \
+SRCS_B = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -54,27 +54,27 @@ SRCS_B := ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-OBJS := $(addprefix $(SRCS_DIR), $(SRCS:c=o))
-OBJS_B := $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
+OBJS = $(addprefix $(SRCS_DIR), $(SRCS:c=o))
+OBJS_B = $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
 
-%.o : %.c Makefile
+%.o: %.c Makefile
 		$(CC) $(CFLAGS) -c $<
 
-$(NAME) : $(INC) $(OBJS)
+$(NAME): $(OBJS)
 		$(AR) $(ARFLAGS) $@ $^
 
-bonus : $(OBJS_B)
+bonus: $(OBJS_B)
 		$(AR) $(ARFLAGS) $(NAME) $^
 
-all : $(NAME)
+all: $(NAME)
 
-clean :
+clean:
 		rm -f $(OBJS) $(OBJS_B)
 
-fclean : clean
+fclean: clean
 		rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
 
 
