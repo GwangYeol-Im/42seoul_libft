@@ -6,55 +6,69 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 20:41:52 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/01 11:09:00 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			count_units(char *s, char c)
+int			count_units(char const *s, char c)
 {
 	int		len;
+	int		idx;
 
 	len = 0;
-	while (*s)
+	idx = 0;
+	while (s[idx])
 	{
-		while (*s == c && *s)
-			s++;
-		if (!*s)
+		while (s[idx] == c && s[idx])
+			idx++;
+		if (!s[idx])
 			return (len);
 		len++;
-		while (*s != c && *s)
-			s++;
+		while (s[idx] != c && s[idx])
+			idx++;
 	}
 	return (len);
+}
+
+char		*get_unit(char const *s, int srt, int end)
+{
+	char	*unit;
+	int		idx;
+
+	unit = malloc(sizeof(char) * (end - srt + 1));
+	idx = 0;
+	while (srt < end)
+		unit[idx++] = s[srt++];
+	unit[idx] = 0;
+	return (unit);
 }
 
 char		**ft_split(char const *s, char c)
 {
 	int		len;
 	int		idx;
+	int		foot_print;
 	int		split_i;
 	char	**split;
-	char	*new_s;
 
-	new_s = (char *)s;
-	len = count_units(new_s, c);
+	len = count_units(s, c);
 	if (!(split = malloc(sizeof(char *) * (len + 1))))
 		return (0);
 	split[len] = 0;
 	split_i = 0;
-	while (*new_s)
+	idx = 0;
+	while (s[idx])
 	{
-		while (*new_s == c && *new_s)
-			new_s++;
-		if (!*new_s)
-			return (split);
-		idx = 0;
-		while (new_s[idx] != c && *new_s)
+		while (s[idx] == c && s[idx])
 			idx++;
-		split[split_i++] = ft_substr(new_s, 0, idx - 1);
-		new_s += idx;
+		if (!s[idx])
+			return (split);
+		foot_print = idx;
+		while (s[idx] != c && s[idx])
+			idx++;
+		split[split_i++] = get_unit(s, foot_print, idx);
 	}
 	return (split);
 }
