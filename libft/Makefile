@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/10/01 17:57:27 by gim               #+#    #+#              #
+#    Updated: 2020/10/01 17:59:07 by gim              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 AR = ar
 ARFLAGS = rcs
 CC = gcc
@@ -8,7 +20,6 @@ NAME = libft.a
 INC = libft.h
 
 SRCS_DIR = ./
-SRCS2_DIR = ./
 SRCS = ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -55,7 +66,7 @@ SRCS_B = ft_lstnew.c \
 		ft_lstmap.c
 
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:c=o))
-OBJS_B = $(addprefix $(SRCS2_DIR), $(SRCS_B:c=o))
+OBJS_B = $(addprefix $(SRCS_DIR), $(SRCS_B:c=o))
 
 %.o: %.c Makefile
 		$(CC) $(CFLAGS) -c $<
