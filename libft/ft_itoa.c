@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 13:42:25 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 20:40:52 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/01 11:35:24 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int			get_int_len(int n)
 {
 	int		len;
 
-	len = 0;
+	len = (n <= 0) ? 1 : 0;
 	while (n)
 	{
 		n /= 10;
@@ -31,15 +31,15 @@ char		*ft_itoa(int n)
 	int		len;
 	char	*str;
 
-	symbol = n < 0 ? -1 : 1;
-	len = symbol > 0 ? get_int_len(n) : get_int_len(n) + 1;
+	symbol = (n < 0) ? -1 : 1;
+	len = get_int_len(n);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	str[len] = 0;
 	if (symbol < 0)
 		str[0] = '-';
-	else if (n == 0)
+	if (n == 0)
 		str[0] = '0';
 	while (--len >= 0 && n)
 	{
