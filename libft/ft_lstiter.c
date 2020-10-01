@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 19:05:34 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 19:15:17 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/01 12:53:51 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (lst == NULL || f == NULL)
+		return ;
 	while (lst)
 	{
 		f(lst->content);
