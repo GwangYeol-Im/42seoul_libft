@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:57:41 by gim               #+#    #+#             */
-/*   Updated: 2020/10/01 11:53:44 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/02 19:56:41 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	new_s1 = (char *)s1;
 	srt = 0;
-	end = ft_strlen(new_s1) - 1;
-	while (in_set(new_s1[srt], set))
+	end = ft_strlen(new_s1);
+	while (in_set(new_s1[srt], set) && new_s1[srt])
 		srt++;
-	if (srt >= end)
-		return ("");
+	if (srt == end)
+		return (trim = malloc(0));
+	end--;
 	while (in_set(new_s1[end], set))
 		end--;
-	if (!(trim = malloc(sizeof(char) * (end - srt + 2))))
+	if (!(trim = malloc(sizeof(char) * (end - srt + 1))))
 		return (0);
 	idx = 0;
 	while (srt <= end)
