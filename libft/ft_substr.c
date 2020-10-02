@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:23:57 by gim               #+#    #+#             */
-/*   Updated: 2020/10/02 18:43:08 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/02 18:58:31 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,6 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (0);
 	str = (char *)s + start;
-	idx = 0;
-	while (idx < len)
-	{
-		if (!str[idx])
-		{
-			sub[idx] = '\0';
-			return (sub);
-		}
-		sub[idx] = str[idx];
-		idx++;
-	}
-	sub[idx] = '\0';
+	ft_strlcpy(sub, str, len);
 	return (sub);
 }
