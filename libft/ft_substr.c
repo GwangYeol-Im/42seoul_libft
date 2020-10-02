@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:23:57 by gim               #+#    #+#             */
-/*   Updated: 2020/10/01 11:54:51 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/02 18:43:08 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	char	*str;
+	size_t	s_len;
 	size_t	idx;
 
-	if (start > ft_strlen(s) || len <= 0)
-		return ("");
+	s_len = ft_strlen(s);
+	if (start > ft_strlen(s) || len < 0)
+	{
+		sub = malloc(0);
+		return (sub);
+	}
 	sub = malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (0);
@@ -28,7 +33,10 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	while (idx < len)
 	{
 		if (!str[idx])
+		{
+			sub[idx] = '\0';
 			return (sub);
+		}
 		sub[idx] = str[idx];
 		idx++;
 	}
