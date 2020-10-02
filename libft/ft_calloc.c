@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 20:30:32 by gim               #+#    #+#             */
-/*   Updated: 2020/09/30 11:45:31 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/02 20:27:53 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void		*ft_calloc(size_t count, size_t size)
 	dest = malloc(size * count);
 	if (!dest)
 		return (0);
-	ft_bzero(dest, count);
+	ft_bzero(dest, (size * count));
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:59:30 by gim               #+#    #+#             */
-/*   Updated: 2020/10/01 00:32:29 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/02 20:34:19 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 char		*ft_strnstr(const char *big, const char *find, size_t len)
 {
-	char	*new_big;
-	int		idx;
+	size_t	f_len;
+	size_t	b_len;
+	size_t	size;
 
-	new_big = (char *)big;
-	idx = 0;
-	if (!find[idx])
-		return (new_big);
-	while (len-- && *new_big)
+	if (!*find)
+		return ((char *)big);
+	f_len = ft_strlen(find);
+	b_len = ft_strlen(big);
+	if (b_len < f_len || len < f_len)
+		return (0);
+	size = b_len > len ? len : b_len;
+	while (size-- >= f_len)
 	{
-		if (find[idx] == '\0')
-			return (new_big - idx);
-		if (*new_big != find[idx])
-			idx = 0;
-		else
-			idx += 1;
-		new_big++;
+		if (ft_memcmp(big, find, f_len) == 0)
+			return ((char *)big);
+		big++;
 	}
 	return (0);
 }
