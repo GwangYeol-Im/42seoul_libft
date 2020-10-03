@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:57:41 by gim               #+#    #+#             */
-/*   Updated: 2020/10/03 13:46:39 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/03 13:57:32 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		idx;
 
+	if (!s1)
+		return (0);
+	if (!set)
+		return ((char *)s1);
 	srt = 0;
 	end = ft_strlen(s1);
 	while (in_set(s1[srt], set) && s1[srt])
