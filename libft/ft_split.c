@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/10/01 11:09:00 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/03 13:02:26 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ char		*get_unit(char const *s, int srt, int end)
 	char	*unit;
 	int		idx;
 
-	unit = malloc(sizeof(char) * (end - srt + 1));
+	if (!(unit = malloc(sizeof(char) * (end - srt + 1))))
+		return (0);
 	idx = 0;
 	while (srt < end)
 		unit[idx++] = s[srt++];
