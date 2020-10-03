@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:22:44 by imgwang-yeo       #+#    #+#             */
-/*   Updated: 2020/10/02 15:13:51 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/03 14:12:36 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		temp[idx++] = *new_src++;
 	}
+	temp[idx] = '\0';
 	ft_memcpy(dst, temp, len);
 	return (dst);
 }
