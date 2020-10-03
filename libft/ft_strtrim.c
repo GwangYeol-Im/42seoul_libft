@@ -6,48 +6,61 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:57:41 by gim               #+#    #+#             */
-/*   Updated: 2020/10/03 13:57:32 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/03 14:28:45 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			in_set(char const c, char const *set)
+int			ft_getstart(const char *s1, const char *set)
 {
-	while (*set)
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s1);
+	i = 0;
+	while (i < len)
 	{
-		if (c == *set)
-			return (1);
-		set++;
+		if (ft_strchr(set, s1[i]) == 0)
+			break ;
+		i++;
 	}
-	return (0);
+	return (i);
+}
+
+int			ft_getend(const char *s1, const char *set)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s1);
+	i = 0;
+	while (i < len)
+	{
+		if (ft_strchr(set, s1[len - i - 1]) == 0)
+			break ;
+		i++;
+	}
+	return (len - i);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim;
-	int		srt;
+	int		start;
 	int		end;
-	int		idx;
+	char	*newstr;
 
-	if (!s1)
-		return (0);
-	if (!set)
-		return ((char *)s1);
-	srt = 0;
-	end = ft_strlen(s1);
-	while (in_set(s1[srt], set) && s1[srt])
-		srt++;
-	if (srt == end)
-		return (trim = malloc(0));
-	end--;
-	while (in_set(s1[end], set))
-		end--;
-	if (!(trim = malloc(sizeof(char) * (end - srt + 1))))
-		return (0);
-	idx = 0;
-	while (srt <= end)
-		trim[idx++] = (char)s1[srt++];
-	trim[idx] = 0;
-	return (trim);
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
+	start = ft_getstart(s1, set);
+	end = ft_getend(s1, set);
+	if (start >= end)
+		return (ft_strdup(""));
+	newstr = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (newstr == NULL)
+		return (NULL);
+	ft_strlcpy(newstr, s1 + start, end - start + 1);
+	return (newstr);
 }
