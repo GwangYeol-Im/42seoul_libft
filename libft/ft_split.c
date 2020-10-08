@@ -6,7 +6,7 @@
 /*   By: gim <gim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:55:51 by gim               #+#    #+#             */
-/*   Updated: 2020/10/08 14:16:49 by gim              ###   ########.fr       */
+/*   Updated: 2020/10/08 14:22:29 by gim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int			get_split(char const *s, char c, char **split)
 		foot_print = idx;
 		while (s[idx] != c && s[idx])
 			idx++;
-		if(!(split[split_i++] = get_unit(s, foot_print, idx)))
+		if (!(split[split_i++] = get_unit(s, foot_print, idx)))
 		{
 			free_split(split);
 			return (0);
